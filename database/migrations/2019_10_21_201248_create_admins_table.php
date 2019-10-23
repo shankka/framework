@@ -29,6 +29,8 @@ class CreateAdminsTable extends Migration
         $admin->account     =  config('system.admin.root.account');
         $admin->password    =  bcrypt(config('system.admin.root.password'));
         $admin->save();
+
+        $admin->assignRole('admin.root');
     }
 
     /**
