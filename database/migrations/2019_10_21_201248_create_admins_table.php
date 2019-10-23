@@ -15,8 +15,20 @@ class CreateAdminsTable extends Migration
     {
         Schema::create('admins', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('nickname')->comment('昵称');
+            $table->string('account')->comment('帐号');
+            $table->string('password')->comment('密码');
+
             $table->timestamps();
+            $table->softDeletes();
         });
+
+        // Create Root Administrator Account
+        $admin = new \App\Models\Admin();
+        $admin->nickname    =  config('system.admin.root.nickname');
+        $admin->account     =  config('system.admin.root.account');
+        $admin->password    =  bcrypt(config('system.admin.root.password'));
+        $admin->save();
     }
 
     /**
