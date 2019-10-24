@@ -29,6 +29,7 @@
                 <th class="kt-datatable__cell kt-datatable__cell--sort"><span style="width:135px;">密码</span></th>
                 <th class="kt-datatable__cell kt-datatable__cell--sort"><span style="width:135px;">创建时间</span></th>
                 <th class="kt-datatable__cell kt-datatable__cell--sort"><span style="width:135px;">最后活跃时间</span></th>
+                <th class="kt-datatable__cell kt-datatable__cell--sort"><span style="width:135px;">操作</span></th>
               </tr>
             </thead>
             <tbody class="kt-datatable__body" style="">
@@ -39,6 +40,12 @@
                   <td class="kt-datatable__cell"><span style="width:135px;">{{ $admin->account }}</span></td>
                   <td class="kt-datatable__cell"><span style="width:135px;">{{ $admin->created_at }}</span></td>
                   <td class="kt-datatable__cell"><span style="width:135px;">{{ '-' }}</span></td>
+                  <td class="kt-datatable__cell">
+                    <span style="width:135px">
+                      <a href="{{ route('admin.admins.edit', $admin) }}" title="编辑" class="btn btn-sm btn-clean btn-icon btn-icon-md"><i class="la la-edit"></i></a>
+                      <a href="{{ route('admin.admins.edit', $admin) }}" title="删除" class="btn btn-sm btn-clean btn-icon btn-icon-md"><i class="la la-trash"></i></a>
+                    </span>
+                  </td>
                 </tr>
               @endforeach
             </tbody>
