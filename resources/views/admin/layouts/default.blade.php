@@ -33,7 +33,7 @@
 <body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--fixed kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading">
   <div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
     <div class="kt-header-mobile__logo">
-      <a href="index.html"><img alt="Logo" src="{{ asset('assets/metronic/media/logos/logo-light.png') }}"/></a>
+      <a href="{{ route('admin.home') }}"><img alt="Logo" src="{{ asset('assets/metronic/media/logos/logo-light.png') }}"/></a>
     </div>
     <div class="kt-header-mobile__toolbar">
       <button class="kt-header-mobile__toggler kt-header-mobile__toggler--left" id="kt_aside_mobile_toggler"><span></span></button>
@@ -48,7 +48,7 @@
       <div class="kt-aside  kt-aside--fixed  kt-grid__item kt-grid kt-grid--desktop kt-grid--hor-desktop" id="kt_aside">
         <div class="kt-aside__brand kt-grid__item " id="kt_aside_brand">
           <div class="kt-aside__brand-logo">
-            <a href="index.html">
+            <a href="{{ route('admin.home') }}">
               <img alt="Logo" src="{{ asset('assets/metronic/media/logos/logo-light.png') }}"/>
             </a>
           </div>
@@ -80,20 +80,31 @@
           <div id="kt_aside_menu" class="kt-aside-menu " data-ktmenu-vertical="1" data-ktmenu-scroll="1" data-ktmenu-dropdown-timeout="500">
             <ul class="kt-menu__nav ">
               <li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true">
-                <a href="index.html" class="kt-menu__link ">
+                <a href="{{ route('admin.home') }}" class="kt-menu__link ">
                   <span class="kt-menu__link-icon"><i class="fas fa-home"></i></span>
                   <span class="kt-menu__link-text">首页</span>
                 </a>
               </li>
               <li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true">
-                <a href="index.html" class="kt-menu__link ">
+                <a href="{{ route('admin.users.index') }}" class="kt-menu__link ">
+                  <span class="kt-menu__link-icon"><i class="fas fa-users"></i></span>
+                  <span class="kt-menu__link-text">用户管理</span>
+                </a>
+              </li>
+              
+              <li class="kt-menu__section">
+                <h4 class="kt-menu__section-text">系统管理</h4>
+                <i class="kt-menu__section-icon flaticon-more-v2"></i>
+              </li>
+              <li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true">
+                <a href="{{ route('admin.system.show') }}" class="kt-menu__link ">
+                  <span class="kt-menu__link-icon"><i class="fas fa-cog"></i></span>
+                  <span class="kt-menu__link-text">系统配置</span>
+                </a>
+                <a href="{{ route('admin.admins.index') }}" class="kt-menu__link ">
                   <span class="kt-menu__link-icon"><i class="fas fa-users-cog"></i></span>
                   <span class="kt-menu__link-text">管理员管理</span>
                 </a>
-              </li>
-              <li class="kt-menu__section ">
-                <h4 class="kt-menu__section-text">Custom</h4>
-                <i class="kt-menu__section-icon flaticon-more-v2"></i>
               </li>
             </ul>
           </div>
@@ -187,7 +198,7 @@
             
                 <!--begin: Navigation -->
                 <div class="kt-notification">
-                  <a href="custom/apps/user/profile-1/personal-information.html" class="kt-notification__item">
+                  <a href="{{ '#' }}" class="kt-notification__item">
                     <div class="kt-notification__item-icon">
                       <i class="flaticon2-calendar-3 kt-font-success"></i>
                     </div>
@@ -201,7 +212,7 @@
                     </div>
                   </a>
                   <div class="kt-notification__custom kt-space-between">
-                    <a href="custom/user/login-v2.html" class="btn btn-label btn-label-brand btn-sm btn-bold">退出</a>
+                    <a href="{{ ('#') }}" class="btn btn-label btn-label-brand btn-sm btn-bold">退出</a>
                     <a class="btn btn-clean btn-sm btn-bold">欢迎登录</a>
                   </div>
                 </div>
