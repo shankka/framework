@@ -21,3 +21,11 @@
     <div class="text-danger">{{ $errors->first('password') }}</div>
   </div>
 </div>
+
+<div class="form-group row">
+  <label for="input-password_confirmation" class="col-2 col-form-label">重复密码</label>
+  <div class="col-10">
+    <input name="password_confirmation" id="input-password_confirmation" class="form-control" type="text" value="{{ old('password_confirmation') }}">
+    <div class="text-danger">{{ $errors->first('password_confirmation') }}</div>
+  </div>
+</div>

@@ -26,7 +26,26 @@ class AdminController extends Controller
      */
     public function create(Admin $admin)
     {
-        return view('admin.admin.edit', compact('admin'));
+        return view('admin.admin.create', compact('admin'));
+    }
+
+    /**
+     * Store Handler
+     */
+    public function store(AdminRequest $request)
+    {
+        $request->merge(['password' => bcrypt($request->password)]);
+
+        $admin = new Admin();
+        $admin->updateHandle($request);
+
+        if ($admin->save()) {
+            // @todo flash success
+            return redirect()->route('admin.admins.index');
+        } else {
+            // @todo flash fail
+            return back();
+        }
     }
 
     /**
@@ -54,7 +73,7 @@ class AdminController extends Controller
             // @todo flash success
             return redirect()->route('admin.admins.index');
         } else {
-            // flash fail
+            // @todo flash fail
             return back();
         }
     }

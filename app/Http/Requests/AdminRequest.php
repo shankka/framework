@@ -29,7 +29,7 @@ class AdminRequest extends FormRequest
         $rules = [
             'nickname'  =>      'required|string|min:3|max:20|' . $nicknameUniqueStr,
             'account'   =>      'required|string|min:6|max:30|' . $accountUniqueStr,
-            'password'  =>      'required|string|min:6|max:30',
+            'password'  =>      'required|string|min:6|max:30|confirmed',
             // 'role_id'   =>      'required|integer',
         ];
 

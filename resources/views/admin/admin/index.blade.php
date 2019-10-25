@@ -8,7 +8,7 @@
       </div>
       <div class="kt-subheader__toolbar">
         <div class="kt-subheader__wrapper">
-          <a href="#" class="btn kt-subheader__btn-primary">
+          <a href="{{ route('admin.admins.create') }}" class="btn kt-subheader__btn-primary">
             <i class="flaticon2-plus-1"></i> &nbsp; 新增
           </a>
         </div>

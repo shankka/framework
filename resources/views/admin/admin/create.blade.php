@@ -20,14 +20,12 @@
     <div class="kt-portlet">
       <div class="kt-portlet__head">
         <div class="kt-portlet__head-label">
-          <h3 class="kt-portlet__head-title">更新管理员信息</h3>
+          <h3 class="kt-portlet__head-title">新增管理员</h3>
         </div>
       </div>
     
-      <form class="kt-form kt-form--label-right" method="post" action="{{ route('admin.admins.update', $admin) }}">
+      <form class="kt-form kt-form--label-right" method="post" action="{{ route('admin.admins.store') }}">
         {{ csrf_field() }}
-        {{ method_field('PUT') }}
-        <input type="hidden" name="id" value="{{ $admin->id }}">
         
         <div class="kt-portlet__body">
           @include('admin.admin._form')
