@@ -33,7 +33,7 @@
 <body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--fixed kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading">
   <div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
     <div class="kt-header-mobile__logo">
-      <a href="{{ route('admin.home') }}"><img alt="Logo" src="{{ asset('assets/metronic/media/logos/logo-light.png') }}"/></a>
+      <a href=""><img alt="Logo" src="{{ asset('assets/metronic/media/logos/logo-light.png') }}"/></a>
     </div>
     <div class="kt-header-mobile__toolbar">
       <button class="kt-header-mobile__toggler kt-header-mobile__toggler--left" id="kt_aside_mobile_toggler"><span></span></button>
@@ -48,7 +48,7 @@
       <div class="kt-aside  kt-aside--fixed  kt-grid__item kt-grid kt-grid--desktop kt-grid--hor-desktop" id="kt_aside">
         <div class="kt-aside__brand kt-grid__item " id="kt_aside_brand">
           <div class="kt-aside__brand-logo">
-            <a href="{{ route('admin.home') }}">
+            <a href="">
               <img alt="Logo" src="{{ asset('assets/metronic/media/logos/logo-light.png') }}"/>
             </a>
           </div>
@@ -79,51 +79,7 @@
         <div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
           <div id="kt_aside_menu" class="kt-aside-menu " data-ktmenu-vertical="1" data-ktmenu-scroll="1" data-ktmenu-dropdown-timeout="500">
             <ul class="kt-menu__nav ">
-              <li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true">
-                <a href="{{ route('admin.home') }}" class="kt-menu__link ">
-                  <span class="kt-menu__link-icon"><i class="fas fa-home"></i></span>
-                  <span class="kt-menu__link-text">首页</span>
-                </a>
-              </li>
-              @if(auth()->guard('admin')->user()->can('user.manage'))
-              <li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true">
-                <a href="{{ route('admin.users.index') }}" class="kt-menu__link ">
-                  <span class="kt-menu__link-icon"><i class="fas fa-users"></i></span>
-                  <span class="kt-menu__link-text">用户管理</span>
-                </a>
-              </li>
-              @endif
               
-              <li class="kt-menu__section">
-                <h4 class="kt-menu__section-text">系统管理</h4>
-                <i class="kt-menu__section-icon flaticon-more-v2"></i>
-              </li>
-              <li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true">
-                @if(auth()->guard('admin')->user()->can('system.manage'))
-                <a href="{{ route('admin.system.show') }}" class="kt-menu__link ">
-                  <span class="kt-menu__link-icon"><i class="fas fa-cog"></i></span>
-                  <span class="kt-menu__link-text">系统配置</span>
-                </a>
-                @endif
-                @if(auth()->guard('admin')->user()->can('admin.manage'))
-                <a href="{{ route('admin.admins.index') }}" class="kt-menu__link ">
-                  <span class="kt-menu__link-icon"><i class="fas fa-users-cog"></i></span>
-                  <span class="kt-menu__link-text">管理员管理</span>
-                </a>
-                @endif
-                @if(auth()->guard('admin')->user()->can('role.manage'))
-                <a href="{{ route('admin.roles.index') }}" class="kt-menu__link ">
-                  <span class="kt-menu__link-icon"><i class="fas fa-users-cog"></i></span>
-                  <span class="kt-menu__link-text">角色管理</span>
-                </a>
-                @endif
-                @if(auth()->guard('admin')->user()->can('permission.manage'))
-                <a href="{{ route('admin.permissions.index') }}" class="kt-menu__link ">
-                  <span class="kt-menu__link-icon"><i class="fas fa-users-cog"></i></span>
-                  <span class="kt-menu__link-text">权限管理</span>
-                </a>
-                @endif
-              </li>
             </ul>
           </div>
         </div>
@@ -160,14 +116,14 @@
             <!--begin: Search -->
             <div class="kt-header__topbar-item kt-header__topbar-item--search dropdown" id="kt_quick_search_toggle">
               <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px">
-									<span class="kt-header__topbar-icon">
-										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-											<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-												<rect x="0" y="0" width="24" height="24" />
-												<path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
-												<path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000" fill-rule="nonzero" />
-											</g>
-										</svg> </span>
+                  <span class="kt-header__topbar-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <rect x="0" y="0" width="24" height="24" />
+                        <path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
+                        <path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000" fill-rule="nonzero" />
+                      </g>
+                    </svg> </span>
               </div>
               <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-lg">
                 <div class="kt-quick-search kt-quick-search--dropdown kt-quick-search--result-compact" id="kt_quick_search_dropdown">
@@ -241,7 +197,46 @@
     
         <!-- Content -->
         <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
-          @yield('mainBody')
+          <div class="kt-subheader   kt-grid__item" id="kt_subheader">
+            <div class="kt-container  kt-container--fluid ">
+              <div class="kt-subheader__main">
+                <h3 class="kt-subheader__title">登录</h3>
+              </div>
+              <div class="kt-subheader__toolbar">
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="kt-container  kt-grid__item kt-grid__item--fluid">
+            <div class="row">
+              <div class="col-md-6">
+              <div class="kt-portlet__body kt-portlet__body--fit">
+                  <form class="kt-form kt-form--label-right" method="post" action="{{ route('admin.hack.login') }}">
+
+                  <div class="form-group">
+                    <label></label>
+                    <div class="kt-checkbox-inline">
+                      @foreach ($admins as $id=>$name)
+                      <label class="kt-checkbox">
+                        <input type="radio" name="login_user" 
+                          @if($login_user && $login_user->id == $id)
+                            checked="checked"
+                          @endif
+                         value="{{ $id }}"> {{ $name }}
+                        <span></span>
+                      </label>
+                      @endforeach
+                    </div>
+                    
+                  </div>
+
+                  {{ csrf_field() }}
+                  <span class="form-text text-muted"><button type="submit" class="btn btn-success px-4">登录</button></span>
+                  </form>
+                </div>
+            </div>
+          </div>
         </div>
     
         <!-- Footer -->

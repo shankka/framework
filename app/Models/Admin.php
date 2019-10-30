@@ -16,6 +16,8 @@ class Admin extends Authenticatable
     use HasRoles;
     use SoftDeletes;
 
+    protected $guard_name = 'admin';
+
     /**
      * The attributes that are mass assignable.
      *

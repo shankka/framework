@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\AdminRequest;
 use App\Models\Admin;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 
 class AdminController extends Controller
 {
@@ -75,6 +76,35 @@ class AdminController extends Controller
         } else {
             // @todo flash fail
             return back();
+        }
+    }
+
+    public function assignRoles(Request $request)
+    {
+        $id = $request->get('id');
+        $admin = Admin::findOrFail($id);
+
+        $roles = $admin->getRoleNames();
+        $admin_roles = [];
+        foreach ($roles as $role_name) {
+            $admin_roles[] = $role_name;
+        }
+
+        $all_roles = Role::pluck('display_name', 'name');
+        return view('admin.admin.assignRoles', compact('admin', 'admin_roles', 'all_roles'));
+    }
+
+    public function assignRolesSave(Request $request)
+    {
+        $id = $request->get('id');
+        $admin = Admin::findOrFail($id);
+
+        $roles = $request->get('roles_id');
+        try {
+            $admin->syncRoles($roles);
+            return redirect()->route('admin.admins.index');
+        } catch (\Exception $e) {
+            return redirect()->back();
         }
     }
 }

@@ -42,6 +42,7 @@
                   <td class="kt-datatable__cell"><span style="width:135px;">{{ '-' }}</span></td>
                   <td class="kt-datatable__cell">
                     <span style="width:135px">
+                      <a href="{{ action('Admin\AdminController@assignRoles', ['id'=>$admin->id]) }}" title="设置角色" class="btn btn-sm btn-clean btn-icon btn-icon-md"><i class="la la-gear"></i></a>
                       <a href="{{ route('admin.admins.edit', $admin) }}" title="编辑" class="btn btn-sm btn-clean btn-icon btn-icon-md"><i class="la la-edit"></i></a>
                       <a href="{{ route('admin.admins.edit', $admin) }}" title="删除" class="btn btn-sm btn-clean btn-icon btn-icon-md"><i class="la la-trash"></i></a>
                     </span>
