@@ -19,6 +19,9 @@ class PermissionMiddleware
 
         foreach ($permissions as $permission) {
             if (app('auth')->guard('admin')->user()->can($permission)) {
+                // $admin = app('auth')->guard('admin')->user();
+                // dd('can', $permission, $admin->getAllPermissions(), $admin);
+
                 return $next($request);
             }
         }

@@ -15,6 +15,7 @@ class AdminController extends Controller
      */
     public function index()
     {
+        // dd(\Auth::guard('admin')->user()->permissions);
         $query = Admin::query();
 
         $admins = $query->paginate();
@@ -104,6 +105,7 @@ class AdminController extends Controller
             $admin->syncRoles($roles);
             return redirect()->route('admin.admins.index');
         } catch (\Exception $e) {
+            // @todo do nothing?
             return redirect()->back();
         }
     }

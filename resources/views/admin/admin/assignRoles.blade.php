@@ -25,7 +25,7 @@
           <div class="form-group">
             <label></label>
             <div class="kt-checkbox-inline">
-              @foreach ($all_roles as $id=>$display_name)
+              @foreach ($all_roles as $id => $display_name)
               <label class="kt-checkbox">
                 <input type="checkbox" name="roles_id[]" 
                   @if(in_array($id, $admin_roles))
