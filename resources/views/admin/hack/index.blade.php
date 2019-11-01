@@ -1,3 +1,4 @@
+{{-- @todo extends admin.layouts.default template --}}
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -214,6 +215,7 @@
               <div class="kt-portlet__body kt-portlet__body--fit">
                   <form class="kt-form kt-form--label-right" method="post" action="{{ route('admin.hack.login') }}">
 
+                    {{-- @todo 代码缩进 --}}
                   <div class="form-group">
                     <label></label>
                     <div class="kt-checkbox-inline">
@@ -224,6 +226,10 @@
                             checked="checked"
                           @endif
                          value="{{ $id }}"> {{ $name }}
+                        
+                        {{-- @todo
+                        <input type="radio" name="login_user" {{ ($login_user && $login_user->id == $id) ? 'checked' : '' }} value="{{ $id }}"> {{ $name }}
+                        --}}
                         <span></span>
                       </label>
                       @endforeach

@@ -11,8 +11,11 @@ class HackController extends Controller
 {
     public function index()
     {
+        // @todo $loginUser
         $login_user = Auth::guard('admin')->user();
+        // @todo Admin::all() 获取所有管理员和其表的所有字段
         $admins = Admin::pluck('nickname', 'id');
+
         return view('admin.hack.index', compact('admins', 'login_user'));
     }
 

@@ -88,6 +88,8 @@ class RoleController extends Controller
         }
     }
 
+    // @todo 可使用模型绑定功能
+    // public function destroy(Role $role)
     public function destroy($id)
     {
         $role = Role::findOrFail($id);
